@@ -12,7 +12,7 @@ function dummy () {
  * @returns {array}
  */
 function reverse (array) {
-  return [];
+  return array.reverse();
 }
 
 /**
@@ -27,7 +27,7 @@ function reverse (array) {
  * 
  */
 function stringReverse (text) {
-  return '';
+  return text.reverse();
 }
 
 
@@ -42,7 +42,13 @@ function stringReverse (text) {
  * @returns {array}
  */
 function fibonacci (length) {
-  return [];
+  var list = []
+  list[0]=1;
+  list[1]=1;
+  for(let i = 2;i<length;i++){
+    list[i]=list[i-1]+list[i-2]
+  }
+  return list
 }
 
 /**
@@ -56,7 +62,14 @@ function fibonacci (length) {
  * @returns {number}
  */
 function biggest (array) {
-  return 0;
+  max = 0
+  for(let i =0;i<array.length;i++){
+    if(array[i]>max)
+    {
+      max = array[i]
+    }
+  }
+  return max;
 }
 
 /**
@@ -75,7 +88,11 @@ function biggest (array) {
  * @returns {array}
  */
 function range (start, end) {
-  return [];
+  list = []
+  for(let i = start;i<end;i++){
+     list.push(i)
+  }
+  return list;
 }
 
 /**
@@ -92,7 +109,16 @@ function range (start, end) {
  * @returns {array}
  */
 function flatten (array) {
-  return [];
+  let arr =[]
+  for (let i = 0;i<array.length;i++){
+    let element = array[i];
+    if(Array.isArray(element)){
+      flatten(element)
+    }else{
+      arr.push(element)
+    }
+  }
+  return arr;
 }
 
 module.exports = {
